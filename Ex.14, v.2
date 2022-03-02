@@ -5,9 +5,7 @@ long long int TenToTwo(int a){
     int i=1, s=0;
     while(a>1){
         if(a&1==1)
-            s=s*i+1;
-        else
-            s*=i;
+            s+=i;
         i*=10;
         a=a>>1;
     }
@@ -30,14 +28,18 @@ int IntInput(char c){
 
 int main(){
     char c;
-    int a, i=0;
-    printf("Enter a set of integers (a<=2**16) in one line, separating the elements with spaces\n");
+    int BeginSet[101];
+    long long int EndSet[101];
+    int i=0;
+    printf("Enter a set of integers (a<=2**16) in one line, separating the elements with spaces, and press two Enter\n");
     while((c=getchar())!='\n'){
         if((c>='0') && (c<='9')){
-            a=IntInput(c);
+            BeginSet[i]=IntInput(c);
+            EndSet[i]=TenToTwo(BeginSet[i]);
             i++;
-            printf("Element %d: %d - %d\n", i, a, TenToTwo(a));
         }
     }
+    for(int j=0; j<i; j++)
+        printf("Element %d: %d - %d\n", j+1, BeginSet[j], EndSet[j]);
     return 0;
 }
