@@ -46,11 +46,6 @@ int main()
         }
     }
     fin.close();
-    for(i=0;i<leny;i++){
-        for(j=0; j<lenx; j++)
-            cout<<Matrix[i][j]<<' ';
-        cout<<'\n';
-    }
     fout.open("Edges.dot");
     int Edge[2];
     for(j=0; j<lenx; j++){
