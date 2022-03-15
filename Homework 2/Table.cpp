@@ -47,6 +47,9 @@ int main()
     }
     fin.close();
     fout.open("Edges.dot");
+    fout<<"graph graphname {\n";
+    for(j=0; j<leny; j++)
+        fout<<j+1<<";\n";
     int Edge[2];
     for(j=0; j<lenx; j++){
         Edge[0]='0';
@@ -57,10 +60,11 @@ int main()
                 Edge[n++]=i+1;
             }
         if(Edge[0]!='0' && Edge[1]!='0')
-            fout<<Edge[0]<<" -- "<<Edge[1]<<'\n';
+            fout<<Edge[0]<<" -- "<<Edge[1]<<";\n";
         else
-            fout<<Edge[0]<<" -- "<<Edge[0]<<'\n';
+            fout<<Edge[0]<<" -- "<<Edge[0]<<";\n";
     }
+    fout<<"}";
     fout.close();
     return 0;
 }
