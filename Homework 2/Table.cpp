@@ -58,10 +58,8 @@ int main()
             }
         if(Edge[0]!='0' && Edge[1]!='0')
             fout<<Edge[0]<<" -- "<<Edge[1]<<'\n';
-        else if(Edge[0]!='0')
-            fout<<Edge[0]<<" -- "<<Edge[0]<<'\n';
         else
-            fout<<Edge[1]<<" -- "<<Edge[1]<<'\n';
+            fout<<Edge[0]<<" -- "<<Edge[0]<<'\n';
     }
     fout.close();
     return 0;
